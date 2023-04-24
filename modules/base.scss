@@ -1,0 +1,39 @@
+@use "./../partials/palette";
+@use "./../partials/typography";
+@use "./../partials/responsive";
+@use "./extends.scss";
+
+html {
+	@extend %reset;
+	scroll-behavior: smooth;
+}
+
+body {
+	@extend %reset;
+	@extend %use-roboto-m;
+}
+
+// Hide Scrollbar
+body::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+footer {
+	@extend %reset;
+}
+
+// Reset default links
+a {
+	color: palette.$dark-text;
+	text-decoration: none;
+	transition: 0.5s;
+
+	&:hover {
+		color: palette.$deeper;
+	}
+}

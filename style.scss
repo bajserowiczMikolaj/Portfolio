@@ -1,0 +1,351 @@
+@use "./partials/palette";
+@use "./partials/typography";
+@use "./partials/responsive";
+@use "./modules/extends.scss";
+@use "./modules/mixins.scss";
+@use "./modules/base.scss";
+
+// Nav Bar
+.navbar {
+	@include mixins.flex-it(row, space-between, center, nowrap);
+
+	color: palette.$dark-text;
+
+	background-color: palette.$lightest;
+	width: 100%;
+	transition: 2s;
+
+	// Keeps navbar at top of window and top layer
+	position: fixed;
+	top: 0;
+	z-index: 2;
+
+	// Logo Styling
+	&__logo {
+		@extend %reset;
+
+		padding: 10px;
+		margin-left: 5vw;
+		transition: 1s;
+
+		&:hover {
+			color: palette.$deeper;
+		}
+	}
+
+	// Menu Styling
+	&__menu {
+		// Links listed in column on small screens
+		@include mixins.flex-it(column, center, flex-end, nowrap);
+
+		//Hamburger Button
+		&__hBtn {
+			padding: 4px 10px 10px 10px;
+			margin: 5px;
+
+			// Button Styling
+			cursor: pointer;
+			border: 1px solid rgba(grey, 0.3);
+			border-radius: 5px;
+
+			div {
+				background-color: palette.$dark-text;
+				width: 35px;
+				height: 5px;
+				margin-top: 6px;
+				border-radius: 4px;
+			}
+
+			&:hover {
+				div {
+					background-color: palette.$deeper;
+					transition: 0.5s;
+				}
+			}
+
+			// Disappears on larger screens
+			@include responsive.md-up {
+				display: none;
+			}
+		}
+
+		&__container {
+			@extend %unlist;
+
+			// Links do not show on small screens
+			display: none;
+
+			// Class toggles when hamButton is clicked
+			&.--active {
+				@include mixins.flex-it(column, flex-end, flex-end, nowrap);
+
+				text-align: right;
+			}
+
+			// Each link
+			&__item {
+				padding: 10px;
+			}
+
+			// Links show on larger screens
+			@include responsive.md-up {
+				@include mixins.flex-it(row, flex-end, center, nowrap);
+			}
+		}
+	}
+}
+
+// Contains all content except footer
+.content {
+	@include mixins.flex-it(column, center, center, nowrap);
+
+	width: 100%;
+
+	// Background gradient/shadow effect over Landing
+	background-image: linear-gradient(
+		palette.$lightest 5%,
+		palette.$darkest 95%
+	);
+}
+
+// Each section of the page
+.page-block {
+	@extend %reset;
+	// Responsive for each section
+	padding: 50px 0px;
+
+	@include responsive.sm-up {
+		padding: 20px 0px;
+	}
+	// Each section fills viewport by default
+	min-height: 100vh;
+	width: 100%;
+
+	// Fixes safari sticky scrolling bug
+	transform: translate3d(0, 0, 0);
+}
+
+// Landing section
+.landing {
+	@include mixins.flex-it(column, center, flex-end, nowrap);
+
+	// Text color & alignment when wrapped
+	color: palette.$dark-text;
+	text-align: right;
+
+	// Sticky scroll effect
+	position: sticky;
+	top: 0;
+	// Section hides when scrolling down
+	z-index: 0;
+
+	// Text styling
+	&__head {
+		@extend %margin-sides;
+		text-transform: lowercase;
+		font-size: 3em;
+	}
+
+	&__subhead {
+		@extend %margin-sides;
+	}
+
+	&__text {
+		@extend %margin-sides;
+		background-color: palette.$dark-text;
+		transition: 0.2s;
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0);
+		}
+	}
+}
+
+// Skills section
+.skills {
+	@extend %light-on-dark;
+	@include mixins.flex-it(column, center, flex-start);
+	@include mixins.headings;
+
+	// Scrolls over landing
+	z-index: 1;
+
+	// skills__card contains each stack item
+	&__card {
+		@extend %margin-sides;
+		margin: 0px auto;
+
+		// Single column on small screens
+		@include mixins.flex-it(column, center, center);
+
+		@include responsive.sm-up {
+			// Centered and wrapped for responsiveness
+			@include mixins.flex-it(row, center, space-around, wrap);
+		}
+
+		// Class for each item (logo + text)
+		&--item {
+			font-size: 1.5em;
+			margin: 10px;
+
+			@include mixins.flex-it(row, center, center, nowrap);
+
+			&-text {
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+// Projects section
+.projects {
+	@extend %dark-on-light;
+	@include mixins.headings;
+	@include mixins.flex-it(column, center, center, nowrap);
+
+	z-index: 1;
+
+	&__group {
+		// Single column list centered on small screens
+		@include mixins.flex-it(column, center, center);
+
+		// Centered responsive row list on larger screens
+		@include responsive.sm-up {
+			@include mixins.flex-it(row, center, flex-start, wrap);
+		}
+
+		&__item {
+			padding: 20px;
+			margin: 10px;
+
+			// Each item card is 500px wide and will wrap to a single column on a small screen
+			@include mixins.flex-it(row, center, center, nowrap);
+			max-width: 500px;
+
+			// Title cards display thumbnail, name and links in a column
+			&--title-card {
+				@include mixins.flex-it(column, flex-start, center, nowrap);
+			}
+
+			&--thumbnail {
+				width: 200px;
+				height: 250px;
+				object-fit: cover;
+				border-radius: 20px;
+				transition: 0.5s;
+			}
+
+			&--dscrb {
+				padding: 0 20px;
+
+				// Text hidden on smaller screens
+				display: none;
+
+				// Text shows on larger screens
+				@include responsive.lg-up {
+					display: inline;
+				}
+			}
+
+			&:hover {
+				img {
+					filter: grayscale(100);
+				}
+			}
+		}
+	}
+}
+// Need to add expand project desc on mobile
+
+
+.about {
+	@include mixins.headings;
+
+	// padding: 50px 0px 0px 0px;
+	// min-height: 50vh;
+	// background-color: palette.$darkest;
+	color: black;
+	background-color: palette.$darkest;
+
+	display: flex;
+	flex-direction: column;
+	// align-items: center;
+	justify-content: center;
+
+	min-height: 100vh;
+
+	z-index: 1;
+
+	&__group {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	& h2 {
+		margin: 20px;
+		padding: 50px;
+	}
+
+	position: relative;
+
+	&-me__card {
+		// Centered and responsive wrapping blurb and photo
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		&--img {
+			filter: grayscale(0);
+			max-width: 300px;
+			border-radius: 200px;
+			margin: 0 5vw;
+			box-shadow: 0 0 20px rgba(black, 0.3);
+		}
+
+		&--text {
+			max-width: 360px;
+			padding: 10px;
+		}
+	}
+
+	&__signature {
+		text-align: right;
+		width: 100%;
+		// margin-top: auto;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+.contact {
+	@include mixins.headings();
+
+	& a {
+		color: black;
+	}
+
+	&__container {
+		// padding: 20px;
+	}
+
+	&__head {
+	}
+
+	&__text {
+		// text-align: center;
+	}
+
+	&__icons {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 20px 20px 50px 20px;
+		// align-items: center;
+	}
+}
+
+// Fix content padding

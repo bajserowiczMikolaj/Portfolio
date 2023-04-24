@@ -1,136 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
-</head>
-<body>
-  <nav>
-    <div class="nav">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <link rel="stylesheet" href="style.css" />
 
-        <a href="home">Home</a>
-        <a href="about">About</a>
-        <a href="project">Projects</a>
-        <a href="get in touch">Get in Touch</a>
+        <!-- Font Awesome Icons -->
+        <script
+            src="https://kit.fontawesome.com/24b9b1a07c.js"
+            crossorigin="anonymous"
+        ></script>
 
-    </div>
-  </nav>
+        <script src="index.js"></script>
 
-    <main class="main">
+        <title>Mikolaj Bajserowicz | Full Stack Developer</title>
+    </head>
+    <body id="home">
+        <header class="navbar">
+            <!-- Navbar Logo -->
+            <h2 class="navbar__logo">Mikolaj Bajserowicz</h2>
 
-        <section class="intro">
-            
-            <h1 class="intro__greatings">Hello my name is Mikolaj Bajserowicz</h1>
-            <h1 class="intro__title">A Junior Software Developer based in the UK</h1>
-            <img class="intro__picture" src="" alt="">
+            <!-- Menu Container -->
+            <div class="navbar__menu">
+                <!-- Hamburger Button -->
+                <div class="navbar__menu__hBtn" onclick="toggleMenu();">
+                    <div class="navbar__menu__hBtn--bar1"></div>
+                    <div class="navbar__menu__hBtn--bar2"></div>
+                    <div class="navbar__menu__hBtn--bar3"></div>
+                </div>
 
-        </section>
-
-
-        <section class="aboutMe">
-            <h1 class="aboutMe__title__mobile">About me</h1>
-            <h1 class="aboutMe__title__desktop">About me</h1>
-
-            <img class="aboutMe__image" src="" alt="my photo">
-            <h1 class="aboutMe__text">about me text blablablablalbalblalbalblablalalbla</h1>
-
-
-            
-
-        </section>
-
-        <section class="skill">
-            <h1>Technical Skils</h1>
-            <h1>some text about skils below????</h1>
-
-            <div class="sklilsImages">
-
-                <img src="images/Skill=Git.png" alt="Git">
-                <img src="images/Skill=HTML5.png" alt="HTML">
-                <img src="images/Skill=CSS3.png" alt="CSS">
-                <img src="images/Skill=JavaScript.png" alt="JavaScript">
-                <img src="images/Skill=SCSS.png" alt="SCSS">
-                <img src="images/Skill=BEM.png" alt="BEM">
-                <img src="images/Skill=React.png" alt="React">
-                <img src="images/Skill=Java.png" alt="Java">
-                <img src="images/Skill=Spring Boot.png" alt="Spring">
-                
-
+                <!-- Menu Links -->
+                <nav>
+                    <ul class="navbar__menu__container">
+                        <li class="navbar__menu__container__item">
+                            <a href="#home">Home</a>
+                        </li>
+                        <li class="navbar__menu__container__item">
+                            <a href="#skills">Skills</a>
+                        </li>
+                        <li class="navbar__menu__container__item">
+                            <a href="#projects">Projects</a>
+                        </li>
+                        <li class="navbar__menu__container__item">
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="navbar__menu__container__item">
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-        </section>
-        <section class="projectSection">
-          
-         <h1>My Projects</h1> 
+        </header>
 
-           <div id="project01">
-             <img src="" alt="">
-             <h1>REACT (I guess technology used)</h1>
-             <h1>Client Project</h1>
-             <h1>about the projectabout the project about the project about the project about the project about the project </h1>
-             <button>Code</button>
-             <button>Preview</button>
-           </div>
-           
-           <div id="project02">
-            <img src="" alt="">
-            <h1>REACT (I guess technology used)</h1>
-            <h1>Client Project</h1>
-            <h1>about the projectabout the project about the project about the project about the project about the project </h1>
-            <button>Code</button>
-            <button>Preview</button>
-          </div>
+        <!-- Content container for everything except footer -->
+        <div class="content">
+            <!-- Landing -->
+            <section class="landing page-block">
+                <h1 class="landing__head">Hi, I'm Mikolaj</h1>
+                <h3 class="landing__subhead">Your Junior Full-Stack Developer</h3>
+            </section>
 
-          <div id="project03">
-            <img src="" alt="">
-            <h1>REACT (I guess technology used)</h1>
-            <h1>Client Project</h1>
-            <h1>about the projectabout the project about the project about the project about the project about the project </h1>
-            <button>Code</button>
-            <button>Preview</button>
-          </div>
+            <!-- Tech Skills -->
+            <section id="skills" class="skills page-block">
+                <h2 class="skills__head skills__head--left">
+                 I can cod in
+                    <i
+                        class="fa-solid fa-window-minimize fa-fade"
+                        style="--fa-fade-opacity: 0"
+                    ></i>
+                </h2>
 
-          <div id="project04">
-            <img src="" alt="">
-            <h1>REACT (I guess technology used)</h1>
-            <h1>Client Project</h1>
-            <h1>about the projectabout the project about the project about the project about the project about the project </h1>
-            <button>Code</button>
-            <button>Preview</button>
-          </div>
+                <div class="skills__card">
+                    <div class="skills__card--item">
+                        <p class="skills__card--item-text">
+                            <i
+                                class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
+                            ></i>
+                            HTML5
+                        </p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">CSS3</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-sass fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">SCSS/Sass</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-js-square fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">JavaScript</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-git-square fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">git</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-java fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">Java</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-react fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">ReactJS</p>
+                    </div>
+                  
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-solid fa-database fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">SQL</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-solid fa-leaf fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">SpringBoot</p>
+                    </div>
+            
+                </div>
+            </section>
 
-          <div id="project05">
-            <img src="" alt="">
-            <h1>REACT (I guess technology used)</h1>
-            <h1>Client Project</h1>
-            <h1>about the projectabout the project about the project about the project about the project about the project </h1>
-            <button>Code</button>
-            <button>Preview</button>
-          </div>
+            <!-- Projects -->
+            <section id="projects" class="projects page-block">
+                <h2 class="projects__head projects__head--center">
+                    I've worked on
+                    <i
+                        class="fa-solid fa-window-minimize fa-fade"
+                        style="--fa-fade-opacity: 0"
+                    ></i>
+                </h2>
 
-          <div id="project06">
-            <img src="" alt="">
-            <h1>REACT (I guess technology used)</h1>
-            <h1>Client Project</h1>
-            <h1>about the projectabout the project about the project about the project about the project about the project </h1>
-            <button>Code</button>
-            <button>Preview</button>
-          </div>
+              
+                <div class="projects__group">
+                    <!-- Each project is a group item -->
 
-        </section>
+                    <!-- project 1 -->
+                
+                    <div class="projects__group__item">
+                        <div class="projects__group__item--title-card">
+                            <img
+                                src="images/fullstack.png"
+                                class="projects__group__item--thumbnail"
+                                alt=""
+                            />
+                            <h3 class="projects__group__item--name">
+                                Competition Management System
+                            </h3>
+                            <div class="projects__group__item--links">
+                                <a
+                                    href="https://github.com/bajserowiczMikolaj/CompetitionWeb-Full-Stack-Project"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-code"></i
+                                ></a>
+                            </div>
+                        </div>
 
-    </main>
+                        <p class="projects__group__item--dscrb">
+                            This project is a web application built with Spring Boot, MySQL, and React.js. 
+                            It allows to create competitions and sign up players for those competitions.
+                        </p>
+                    </div>
 
-    <footer>
-        <div>
-            <h1>mbajserowicz@gmail.com</h1>
-            <img src="" alt="CV">
-            <img src="" alt="Github">
-            <img src="" alt="Linkedin">
-        </div>
-    </footer>
-    
-</body>
+                    <!-- project 3 -->
+                    <div class="projects__group__item">
+                        <div class="projects__group__item--title-card">
+                            <img
+                                src="images/springboot.jpeg"
+                                class="projects__group__item--thumbnail"
+                                alt=""
+                            />
+                            <h3 class="projects__group__item--name">SMS API</h3>
+                            <div class="projects__group__item--links">
+                                <a
+                                    href="https://github.com/bajserowiczMikolaj/SmsSenderAPI"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-code"></i
+                                ></a>
+                            </div>
+                        </div>
+
+                        <p class="projects__group__item--dscrb">
+                            This project is a Spring Boot application that uses Twilio API as an SMS gateway.
+                             It allows to send SMS messages from the web interface to any phone number.
+                        </p>
+                    </div>
+
+                    <!-- project 4 -->
+                    <div class="projects__group__item">
+                        <div class="projects__group__item--title-card">
+                            <img
+                                src="images/Java.png"
+                                class="projects__group__item--thumbnail"
+                                alt=""
+                            />
+                            <h3 class="projects__group__item--name">
+                                Java console game (SNAP)
+                            </h3>
+                            <div class="projects__group__item--links">
+                                <a
+                                    href="https://github.com/bajserowiczMikolaj/SnapGame"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-code"></i
+                                ></a>
+                            </div>
+                        </div>
+
+                        <p class="projects__group__item--dscrb">
+                            The goal of this project was to demonstrate that I clearly understood the Pillars of Object Oriented Programming.
+                        </p>
+                    </div>
+
+                    <!-- project 5 -->
+                    <div class="projects__group__item">
+                        <div class="projects__group__item--title-card">
+                            <img
+                                src="images/Java.png"
+                                class="projects__group__item--thumbnail"
+                                alt=""
+                            />
+                            <h3 class="projects__group__item--name">Java console game (Hangman)</h3>
+                            <div class="projects__group__item--links">
+                                <a
+                                    href="https://github.com/bajserowiczMikolaj/Hangman"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-code"></i
+                                ></a>
+                            </div>
+                        </div>
+
+                        <p class="projects__group__item--dscrb">
+                          The gol of this project was to practive my java skils. 
+                        </p>
+                    </div>
+
+
+
+                    <div class="projects__group__item">
+                        <!-- Each project has a title-card with picture, name and link -->
+                        <div class="projects__group__item--title-card">
+                            <img
+                                src="images/calculator.png"
+                                class="projects__group__item--thumbnail"
+                                alt=""
+                            />
+                            <h3 class="projects__group__item--name">
+                                JavaScript Calculator
+                            </h3>
+                            <div class="projects__group__item--links">
+                                <a
+                                    href="https://github.com/bajserowiczMikolaj/Calculator"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-code"></i
+                                ></a>
+                            </div>
+                        </div>
+                        <p class="projects__group__item--dscrb">
+                            A project to demonstrate the use of JavaScript and
+                            DOM manipulation, by recreating the Apple calculator
+                            app on a web page.
+                        </p>
+                    </div>
+
+
+                    <div class="projects__group__item">
+                        <!-- Each project has a title-card with picture, name and link -->
+                        <div class="projects__group__item--title-card">
+                            <img
+                                src="images/springboot.jpeg"
+                                class="projects__group__item--thumbnail"
+                                alt=""
+                            />
+                            <h3 class="projects__group__item--name">
+                                GSM modem
+                            </h3>
+                            <div class="projects__group__item--links">
+                                <a
+                                    href="https://github.com/bajserowiczMikolaj/smsModemSender"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-code"></i
+                                ></a>
+                            </div>
+                        </div>
+                        <p class="projects__group__item--dscrb">
+                            This project is a Spring Boot application that control GSM modem via a serial port. 
+                            It allows you to send messages and receive them like an SMS gateway.
+                            Require GSM module and sim card! 
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+        <!-- Footer Contact section -->
+        <footer id="about" class="about page-block">
+            <div class="about__group">
+                <!-- About Me Subsection -->
+                <div class="about-me">
+                    <h2 class="about-me__head about-me__head--left">
+                        I am
+                        <i
+                            class="fa-solid fa-window-minimize fa-fade"
+                            style="--fa-fade-opacity: 0"
+                        ></i>
+                    </h2>
+                    <div class="about-me__card">
+                        <img
+                            class="about-me__card--img"
+                            src="./images/profile-photo.jpg"
+                        />
+                        <div>
+                            <p class="about-me__card--text">
+                                Hi, I'm Mikolaj, a former automation engineer who switched careers to become a full-stack developer. 
+                                I've had a passion for creating and designing things since I was young and this led me to pursue a career in full-stack development.
+                            </p>
+
+                            <p class="about-me__card--text">
+                                Outside of coding, I enjoy wrestling and cycling.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact" class="contact">
+                    <h2 class="contact__head contact__head--center">
+                        Get In Touch
+                    </h2>
+
+                    <div class="contact__icons">
+                        <p class="contact__text">
+                            <a href="mbajserowicz@gmail.com"
+                                ><i class="fa-solid fa-envelope fa-2xl"></i>
+                                mbajserowicz@gmail.com</a
+                            >
+                        </p>
+
+                        <p class="contact__text">
+                            <a
+                                href="https://www.linkedin.com/in/mikolajbajserowicz/"
+                                target="_blank"
+                                ><i class="fa-brands fa-linkedin fa-2xl"></i>
+                                Mikolaj Bajserowicz</a
+                            >
+                        </p>
+                        <p class="contact__text">
+                            <a href="https://github.com/bajserowiczMikolaj" target="_blank"
+                                ><i class="fa-brands fa-github fa-2xl"></i>
+                               @bajserowiczMikolaj </a
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p class="about__signature">
+                Built in HTML, Sass and JS by Mikolaj Bajserowicz.
+            </p>
+        </footer>
+    </body>
 </html>

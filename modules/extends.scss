@@ -1,0 +1,26 @@
+@use "./../partials/palette";
+
+%reset {
+	margin: 0;
+	padding: 0;
+}
+
+%unlist {
+	@extend %reset;
+	list-style: none;
+}
+
+%margin-sides {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+%light-on-dark {
+	background-color: palette.$darkest;
+	color: palette.$light-text;
+}
+
+%dark-on-light {
+	background-color: palette.$lightest;
+	color: palette.$dark-text;
+}
